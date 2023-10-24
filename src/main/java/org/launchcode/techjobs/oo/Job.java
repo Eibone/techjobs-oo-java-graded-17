@@ -97,4 +97,20 @@ public class Job {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        String nameTern = this.getName().isEmpty() ? "Name: Data not available" : "Name: " + this.getName();
+        String employerTern = this.getEmployer() == null || this.getEmployer().getValue().isEmpty() ? "Employer: Data not available" : "Employer: " + this.getEmployer().getValue();
+        String locationTern = this.getLocation() == null || this.getLocation().getValue().isEmpty() ? "Location: Data not available" : "Location: " + this.getLocation().getValue();
+        String positionTypeTern = this.getPositionType() == null || this.getPositionType().getValue().isEmpty() ? "Position Type: Data not available" : "Position Type: " + this.getPositionType().getValue();
+        String coreCompetencyTern = this.getCoreCompetency() == null || this.getCoreCompetency().getValue().isEmpty() ? "Core Competency: Data not available" : "Core Competency:" + this.getCoreCompetency().getValue();
+        return System.lineSeparator() +
+                "ID: " + this.getId() + System.lineSeparator() +
+                nameTern + System.lineSeparator() +
+                employerTern + System.lineSeparator() +
+                locationTern + System.lineSeparator() +
+                positionTypeTern + System.lineSeparator() +
+                coreCompetencyTern + System.lineSeparator();
+    }
 }
